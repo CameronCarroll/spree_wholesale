@@ -19,11 +19,12 @@ Deface::Override.new(:virtual_path => 'orders/_line_item',
 :disabled => false)
 
 #replace :admin_product_form_right,        'admin/hooks/product_form_right'
+#DISABLED (functionality is in distribution)
 Deface::Override.new(:virtual_path => 'admin/products/form',
 :name => 'productform_right',
 :replace => "[data-hook='admin_product_form_right'], #admin_product_form_right[data-hook]",
 :partial => "admin/hooks/product_form_right",
-:disabled => false)
+:disabled => true)
 
 #insert_before :account_my_orders,         'hooks/wholesale_customer'
 Deface::Override.new(:virtual_path => 'users/show',

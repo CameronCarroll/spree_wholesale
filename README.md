@@ -1,6 +1,6 @@
 Spree Wholesale
 ===============
-
+[Version edited for use with Spree_Distribution]
 Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesale adds a wholesaler login and signup page as well as an admin to approve and deny applicants.
 
 
