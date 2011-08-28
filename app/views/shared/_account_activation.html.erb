@@ -1,0 +1,5 @@
+<% if @user.has_role("wholesaler") %>
+<p> Hello <%= user.email %>; You're logged in and activated as a wholesale account.</p>
+<% else %>
+<p> Hello <%= user.email %>; You are currently not activated as a wholesaler. If you have a concern, you can <a href="/contact">contact us</a></p>
+<% end %>

@@ -95,3 +95,9 @@ Deface::Override.new(:virtual_path => "layouts/admin",
 :partial => "admin/hooks/wholesale_tab",
 :disabled => true)
 
+Deface::Override.new(:virtual_path => "/users/show",
+:name => "account_activation_notifier",
+:insert_bottom => "<code erb-loud> hook :account_summary do </code>",
+:partial => "account_activation",
+:diabled => false)
+
