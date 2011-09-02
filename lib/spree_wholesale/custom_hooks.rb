@@ -1,4 +1,6 @@
-  require 'deface'  
+ class CustomHooks < Spree::ThemeSupport::HookListener
+  
+require 'deface'  
   
   #Hooks have been replaced by Deface overrides
   #Check out https://github.com/railsdog/deface for a quick overview of how it works and how to use it.
@@ -95,9 +97,13 @@ Deface::Override.new(:virtual_path => "layouts/admin",
 :partial => "admin/hooks/wholesale_tab",
 :disabled => true)
 
-Deface::Override.new(:virtual_path => "/users/show",
+#insert_after :account_summary, 'hooks/account_activation'
+Deface::Override.new(:virtual_path => "users/show",
 :name => "account_activation_notifier",
-:insert_bottom => "<code erb-loud> hook :account_summary do </code>",
-:partial => "account_activation",
+:insert_after => "code[erb-loud]:contains('hook :account_summary')",
+:partial => "hooks/account_activation",
 :diabled => false)
 
+
+
+end

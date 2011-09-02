@@ -1,0 +1,15 @@
+<% if !@user.roles.empty? %>
+
+<% if @user.roles[0].name == "wholesaler" %>
+<p> Hello <%= @user.email %>; You're logged in and activated as a <%= @user.roles[0].name %> account.</p>
+<% elsif @user.roles[0].name == "distributor" %>
+<p> Hello <%= @user.email %>; You're logged in and activated as a <%= @user.roles[0].name %> account.</p>
+<% elsif @user.roles[0].name == "admin" %>
+<p> Hello <%= @user.email %>; You're logged in as an administrator. </p>
+<% end %>
+
+<% else %>
+<p> Hello <%= @user.email %>; You are currently logged in as a customer. If you have a concern about your acccount role (wholesaler, sales associate), you can <a href="/contact">contact us</a></p>
+
+
+<% end %>
